@@ -1,24 +1,147 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  say-hello:
-    # Specify the execution environment.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="IE=edge">
+<meta nome= "viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário</title>
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17,54,71));
+    }
+    .box{
+        color: white;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 15px;
+        border-radius: 15px;
+        width: 30%;
+        
+    }
+    fieldset{
+        border: 3px solid dodgerblue;
+    }
+    legend {
+        border: 1px solid dodgerblue;
+        padding: 10px;
+        text-align: center;
+        background-color: dodgerblue;
+        border-radius: 8px;
+        
+        }
+        .inputBox{
+            position: relative;
+        }
+        .inputUser{
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        .labelInput{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+            transition: .5px;
+        }
+        .inputUser:focus~.labelInput,
+        .inputUser:valid~.labelInput{
+            top: -20px;
+            font-size: 12px;
+            color: dodgerblue;
+        }
+        #data_nascimento{
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+        }
+        #submit{
+            background-image: linear-gradient(to right, rgb(0,92,197),rgb(90,20,220));
+            width: 100%;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+            border: none;
+
+        }
+        #submit:hover{
+            background-image: linear-gradient(to right, rgb(0,92,197),rgb(90,20,220));
+
+        }
+        
+</style>
+    </head>
+    <body>
+<div class="box">
+ <form action="">
+     <fieldset>
+         <legend><b>Formulário de clientes </b></legend>
+         <br>
+         <div class="inputBox">
+            <label for="nome" class="labelInput" >Nome Completo</label>
+             <input type="text" nome="nome" id="nome" class="inputUser" required>
+             
+         </div>
+         <br><br>
+         <div class="inputBox">
+            <label for="text" class="labelInput" >Email</label>
+            <input type="Email" nome="Email" id="Email" class="inputUser" required>
+           
+        </div>
+        <br><br>
+        <div class="inputBox">
+            <label for="Telefone" class="labelInput" >Telefone</label>
+            <input type="tel" nome="Telefone" id="Telefone" class="inputUser" required>
+        </div>
+        <p>Sexo:</p>
+        <input type="radio" id="feminino" nome="genero" value="feminino" required>
+        <label for="feminino">Feminino</label>
+        <br>
+        <input type="radio" id="masculino" nome="genero" value="masculino" required>
+        <label for="masculino">Masculino</label>
+        <br>
+        <input type="radio" id="outro" nome="genero" value="outro" required>
+        <label for="outro">Outro</label>
+        <br><br>
+        <div class="inputBox">
+            <label for="data_nascimento" ><b>Data De Nascimento</b></label>
+            <input type="date" nome="data_nascimento" id="data_nascimento"  required>
+        </div>
+        <br><br><br>
+        <div class="inputBox">
+            <label for="cidade" class="labelInput" >Cidade</label>
+            <input type="text" nome="cidade" id="cidade" class="inputUser" required>
+        </div>
+        <br><br>
+        <div class="inputBox">
+            <label for="estado" class="labelInput">Estado</label>
+            <input type="text" nome="estado" id="estado" class="inputUser" required>
+        </div>
+        <br><br>
+        <div class="inputBox">
+            <label for="endereco" class="labelInput" >Endereço</label>
+            <input type="text" nome="endereco" id="endereco" class="inputUser" required>
+        </div>
+        <br><br>
+        <input type="submit" nome="submit" id="submit">
+        
+     </fieldset>
+
+ </form>
+
+</div>
+        
+    </body>
+    </html>
